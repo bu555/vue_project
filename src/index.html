@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>project555</title>
+    <style>
+        [v-cloak]{
+            display:none;
+        }
+    </style>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!--<p v-cloak>{{msg}}</p>-->
+        <vue-p1></vue-p1>
+        <vue-list></vue-list>
+    </div>
+    <template id="tpl">
+        <ul>
+            <li v-for="val in movies">{{val}}</li>
+        </ul>
+    </template>
+    <script>
+        //组件创建
+        var component = Vue.extend({
+            template:`<div><h3>{{msg}}</h3>
+                       <p>晚上7点</p>
+                       <p>{{price|grmbParse}}</p>
+                        <p><strong>敬请期待</strong></p> </div>`,
+            data:function(){
+                return {
+                    msg:"东方不败-风云再起",
+                    price:25
+                }
+            }
+            
+        });
+        Vue.component("vue-p1",component); //组件名
+        //创建组件(快捷方式)
+        Vue.component("vue-list",{
+            template:"#tpl",
+            data:function(){
+                return{
+                    movies:["飞屋环游记","千与千寻","龙猫","里约大冒险","冰河世纪"]
+                }
+            }
+        })
+        var vm = new Vue({
+            el:"#app",
+            data:{
+                msg:'东方不败-风云再起',
+                isShow:true
+            },
+            methods:{
+                change:function(){
+                    this.isShow=!this.isShow;
+                },
+                del:function(){
+                    
+                }
+            },
+            components:{
+                "vue-p1":component
+            },
+            filters:{
+                rmbParse:function(val){
+                    return "¥"+val;
+                }
+            }
+        });
+        //         //定义组件
+        // var component = Vue.extend({
+        //     template:"<p>今晚播映:{{val}}</p>",
+        //     data:function(){   //注:数据要定义在函数中,使用return返回
+        //         return {
+        //         val:"你的名字"
+        //         }
+        //     }
+        // });
+        // //注册组件
+        // Vue.component("vue-p1",component);  //组件名,扩展的名字
+
+        // //使用组件
+        // var vm = new Vue({
+        //     el:"#app",  //视图区
+        //     data:{},    //数据
+        //     methods:{}, //数据---方法
+        //     components:{  //组件
+        //         "vue-p1":component
+        //     },
+        //     filters:{}  //过滤器
+        // });
+    </script>
+</body>
+</html>
