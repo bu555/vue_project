@@ -63,7 +63,7 @@ module.exports = {  // nodejs语法,暴露出去供使用
             {
                 //替换文件的引用，小文件将以base64编码的形式和文件一起打包，可减少http请求
                 //针对img和url背景图
-                test: /\.(png|jpg|gif)$/,
+                test: /\.(png|jpg|gif|ttf)$/,
                 use: [
                     { loader: 'url-loader', options: { limit: 1024 } },  //limit设置的是大于1024byte(字节)的图片转成base64码
                     'image-webpack-loader'  //用于压缩图片
