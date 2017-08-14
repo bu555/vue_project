@@ -12,22 +12,21 @@
 </template>
 <script>
     export default {
-        data:function(){
+        data:function(){  //定义数据
             return{
                 list:[]
             }
         },
         methods:{
-            getLunbo:function(){
+            getLunbo:function(){  //ajax异步请求数据
                 let url = "http://139.199.192.48:8888/api/getlunbo";
                 this.$http.get(url).then(rep=>{
-                    this.list = rep.body.message;  
-                    console.log(rep);
+                    rep.body.status==0 && (this.list = rep.body.message);  
                 });
             }
         },
         created:function(){
-            this.getLunbo();
+            this.getLunbo();   //先调用一次
         }
 
     }

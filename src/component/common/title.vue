@@ -1,5 +1,5 @@
 <template>
-    <section class="list mint-header">
+    <section class="list mint-header"  style="background:#7378a7">
     <div @click="rollback" class="mint-header-button is-left">
       <button class="mint-button mint-button--default mint-button--normal">
         <span class="mint-button-icon"><i class="mintui mintui-back"></i></span>

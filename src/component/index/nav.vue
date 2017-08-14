@@ -7,12 +7,16 @@
                     <div class="mui-media-body">新闻咨询</div>
                 </router-link>
             </li>
-            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                <router-link to="/photo/list/0">
                     <span class="mui-icon mui-icon-image"></span>
-                    <div class="mui-media-body">图片分享</div></a></li>
+                    <div class="mui-media-body">图片分享</div></a>
+                </router-link>
+            </li>
             <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
                     <span class="mui-icon mui-icon-extra mui-icon-extra-gift"></span>
-                    <div class="mui-media-body">商品购买</div></a></li>
+                    <div class="mui-media-body">商品购买</div></a>
+            </li>
             <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
                     <span class="mui-icon mui-icon-search"></span>
                     <div class="mui-media-body">搜一搜</div></a></li>

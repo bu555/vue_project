@@ -22,12 +22,12 @@
 
 <script>
 import Ctitle from "../common/title.vue";
-import Config from "../../js/config.js";
+import Config from "../../js/config.js";  //配置路径的文件
  export default {
       data:function(){
           return{
               list:[],
-              title:"新闻资讯"
+              title:"图文资讯"
           }
       },
       methods:{
@@ -39,9 +39,9 @@ import Config from "../../js/config.js";
           }
       },
       created:function(){
-          this.getNews();
+          this.getNews();  //先调用一次
       },
-      components:{
+      components:{   //配置这个组件,插入到页面中
           "v-title":Ctitle
       }
   }
