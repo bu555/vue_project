@@ -5,6 +5,7 @@ import Cindex from "../component/index/index.vue";
 import CnewsList from "../component/news/list.vue";
 import CnewsDetails from "../component/news/details.vue";
 import Cphoto from "../component/photos/photo_list.vue";
+import Cdetails from "../component/photos/photo_details.vue";
 
 export default new VueRouter({
     routes: [  //配置路由
@@ -12,6 +13,7 @@ export default new VueRouter({
         { path: '/index', component: Cindex },
         { path: '/news/list', component: CnewsList},
         { path: '/news/details/:id', component: CnewsDetails},
-        { path: '/photo/list/:id', component:Cphoto}
+        { path: '/photo/list/:id', component:Cphoto},
+        { path: '/photo/details/:id', component:Cdetails},
     ]
 });

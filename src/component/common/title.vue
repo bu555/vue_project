@@ -1,7 +1,7 @@
 <template>
     <section class="list mint-header"  style="background:#7378a7">
-    <div @click="rollback" class="mint-header-button is-left">
-      <button class="mint-button mint-button--default mint-button--normal">
+    <div class="mint-header-button is-left">
+      <button  @click="rollback" class="mint-button mint-button--default mint-button--normal">
         <span class="mint-button-icon"><i class="mintui mintui-back"></i></span>
         <label class="mint-button-text">返回</label>
       </button>
