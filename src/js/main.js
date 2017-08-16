@@ -7,7 +7,7 @@ import VueResource from "vue-resource";   //用于ajax扩展
 import MintUI from "mint-ui";  //基于vue的移动端组件
 import "mint-ui/lib/style.css";   
 import "mui/dist/css/mui.css";  //导入mui样式(只是用其样式)
-import 'mui/examples/hello-mui/css/icons-extra.css'; // 引入mui的扩展图标样式
+import "mui/examples/hello-mui/css/icons-extra.css"; // 引入mui的扩展图标样式
 import "./filter.js";
 
 
@@ -15,6 +15,17 @@ import "./filter.js";
 Vue.use(VueRouter);
 Vue.use(VueResource);
 Vue.use(MintUI);
+
+//导入全屏预览图片插件
+import ImgPreview from "../component/plugin/img_preview_install.js";
+Vue.use(ImgPreview);
+//导入图片懒加载插件
+import {Lazyload} from "mint-ui";
+Vue.use(Lazyload);
+//tab栏切换插件
+import { Navbar, TabItem } from 'mint-ui';
+Vue.component(Navbar.name, Navbar);
+Vue.component(TabItem.name, TabItem);
 
 //2.导入自己的模块  
 import App from "../component/App.vue";  //导入App.vue根组件((定义了头部底部+router-view))

@@ -44,7 +44,7 @@ export default {
         submitComment: function () {
             //接口路径
             let url = Config.domain + "/api/postcomment/" + this.id;
-            //post请求
+            //post请求,提交评论
             this.$http.post(url, { content: this.content }, { emulateJSON: true }).then(function (rep) {
                 if (rep.body.status == 0) {
                     this.list.unshift({     //list数组在前面添加一个对象
@@ -59,7 +59,7 @@ export default {
         getComment: function () {
             //接口路径
             let url = Config.domain + "/api/getcomments/" + this.id + "?pageindex=" + this.pageindex;
-            //get请求
+            //get请求,获取评论
             this.$http.get(url).then(function (rep) {
                 if (rep.body.status == 0 && rep.body.message.length != 0) { //如果成功获取
                     this.list = this.list.concat(rep.body.message); //拼接list数组

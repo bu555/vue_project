@@ -1,6 +1,7 @@
 <template>
     <section class="photo-details">
         <v-title v-bind:title="title"></v-title>
+        <v-imgpreview></v-imgpreview>
         <div class="mui-card-header">{{detailsImg.title}}</div>
         <div class="mui-card-content-inner" style="padding-bottom:5px">
             <p>
@@ -11,23 +12,17 @@
         <!--图片缩略图显示-->
         <ul class="mui-table-view mui-grid-view mui-grid-9 min-img-list">
             <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" v-for="(val,i) in minImgList" :key="val.id">
-                <img :src="val.src">
+                <img v-preview="val.src" :src="val.src" >
             </li>
         </ul>
         <div class="mui-card-content-inner content-img" v-html="detailsImg.content"> </div>
-        
-        <mt-popup :v-model="popupVisible" >
-            
-            
-        </mt-popup>
     </section>
 </template>
 
 <script>
 import Ctitle from "../common/title.vue";
 import Config from "../../js/config.js";
-import Vue from "vue";
-import { Popup } from 'mint-ui';
+import Cimgpreview from "../plugin/img_preview.vue";
 export default {
     data: function () {
         return {
@@ -39,7 +34,7 @@ export default {
     components: {
         //注册为自己的子组件
         "v-title": Ctitle,
-        "mt-popup":Popup
+        "v-imgpreview":Cimgpreview
         
     },
     // watch:{

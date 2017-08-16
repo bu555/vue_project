@@ -13,8 +13,9 @@
     <div class="mui-card" v-for="(val,i) in photolist" :key="i">
         <!--此处传入图片id-->
         <router-link :to="'/photo/details/'+val.id">
-        <div class="mui-card-header mui-card-media" :style="'height:70vw;background-image:url('+val.img_url+')'">
-        </div>
+        <!--<div class="mui-card-header mui-card-media">
+        </div>-->
+        <img :src="val.img_url" style="width:100%" v-lazy="val.img_url"> 
         </router-link>
         <div class="mui-card-content">
             <div class="mui-card-content-inner">
